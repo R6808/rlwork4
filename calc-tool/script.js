@@ -30,3 +30,12 @@ console.table(validExpenses);
 console.log('总消费：', totalExpense(validExpenses), '元');
 
 console.log('消费项目：', getItems(validExpenses));
+const categoryTotal = (list, category) => {
+    return list
+        .filter(expense => expense.category === category)
+        .reduce((sum, expense) => sum + expense.amount, 0);
+};
+
+console.log('餐饮消费：', categoryTotal(validExpenses, '餐饮'), '元');
+console.log('交通消费：', categoryTotal(validExpenses, '交通'), '元');
+console.log('娱乐消费：', categoryTotal(validExpenses, '娱乐'), '元');
