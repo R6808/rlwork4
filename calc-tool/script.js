@@ -8,3 +8,25 @@ const expenses = [
 ];
 
 console.table(expenses);
+const cleanExpenses = (list) => {
+    return list.filter(expense => expense.amount >= 0);
+};
+
+const totalExpense = (list) => {
+    return list.reduce((sum, expense) => {
+        return sum + expense.amount;
+    }, 0);
+};
+
+const getItems = (list) => {
+    return list.map(expense => expense.item);
+};
+
+const validExpenses = cleanExpenses(expenses);
+
+console.log('清洗后的数据：');
+console.table(validExpenses);
+
+console.log('总消费：', totalExpense(validExpenses), '元');
+
+console.log('消费项目：', getItems(validExpenses));
