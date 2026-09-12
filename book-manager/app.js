@@ -39,14 +39,20 @@ function render() {
     button.textContent = '删除';
     button.className = 'delete';
 
-    button.addEventListener('click', function() {
-      books = books.filter(function(item) {
-        return item !== book;
-      });
+button.addEventListener('click', function() {
+  const ok = confirm('确定删除这本图书吗？');
 
-      saveBooks();
-      render();
-    });
+  if (!ok) {
+    return;
+  }
+
+  books = books.filter(function(item) {
+    return item !== book;
+  });
+
+  saveBooks();
+  render();
+});
 
     li.appendChild(text);
     li.appendChild(button);
