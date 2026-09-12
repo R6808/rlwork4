@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图书信息管理</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    input, select, button {
+      padding: 8px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    #tip {
+      color: red;
+    }
+
+    #search {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    li {
+      list-style: none;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    .delete {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>图书信息管理</h1>
+
+  <form id="book-form">
+    <input id="book-name" type="text" placeholder="书名">
+    <input id="author" type="text" placeholder="作者">
+
+    <select id="type">
+      <option value="">选择类型</option>
+      <option value="文学">文学</option>
+      <option value="科技">科技</option>
+      <option value="历史">历史</option>
+    </select>
+
+    <button type="submit">添加图书</button>
+  </form>
+
+  <p id="tip"></p>
+
+  <input id="search" type="text" placeholder="输入书名进行查询">
+
+  <ul id="book-list"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
