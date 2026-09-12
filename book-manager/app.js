@@ -17,9 +17,9 @@ function render() {
 
   const keyword = searchInput.value.trim();
 
-  const result = books.filter(function(book) {
-    return book.name.includes(keyword);
-  });
+const result = books.filter(function(book) {
+  return book.name.includes(keyword) || book.author.includes(keyword);
+});
 
   if (result.length === 0) {
     const li = document.createElement('li');
